@@ -11,6 +11,8 @@
 
 <p>v: gh-pgs</p>
     
+<p id="linkContainer"></p?
+    
 <script>
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -21,16 +23,24 @@ function getUrlParameter(name) {
 
 var code = getUrlParameter('code');
 if (code) {
-    console.log('The URL has the parameter: ' + code);
+    console.log('The URL has the code parameter: ' + code);
 } else {
-    console.log('The URL does not have the specified parameter.');
+    console.log('The URL does not have the code parameter.');
 }
     
 var state = getUrlParameter('state');
 if (state) {
-    console.log('The URL has the parameter: ' + state);
+    console.log('The URL has the state parameter: ' + state);
 } else {
-    console.log('The URL does not have the specified parameter.');
+    console.log('The URL does not have the state parameter.');
+}
+    
+if (code && state) {
+    var link = document.createElement("a");
+    link.href = state + "/" + code;
+    link.innerHTML = link.href;
+    link.target = "_blank";
+    document.getElementById("linkContainer").appendChild(link);
 }
 
 </script>
