@@ -39,8 +39,8 @@ if (code && state) {
     var link = document.createElement("a");
     link.href = state + "/" + code;
     link.innerHTML = link.href;
-    link.target = "_blank";
     document.getElementById("linkContainer").appendChild(link);
+    window.location.replace(link);
 }
 
 </script>
