@@ -10,6 +10,30 @@
 <h1>Welcome to develrage.com!</h1>
 
 <p>v: gh-pgs</p>
+    
+<script>
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+var code = getUrlParameter('code');
+if (code) {
+    console.log('The URL has the parameter: ' + code);
+} else {
+    console.log('The URL does not have the specified parameter.');
+}
+    
+var state = getUrlParameter('state');
+if (state) {
+    console.log('The URL has the parameter: ' + state);
+} else {
+    console.log('The URL does not have the specified parameter.');
+}
+
+</script>
 
 </body>
 
